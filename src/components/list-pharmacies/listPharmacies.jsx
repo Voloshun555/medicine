@@ -4,11 +4,7 @@ import s from "./listPharmacies.module.scss";
 import { addShopItem, removeShopItem } from "../../redux/shop/shopSlice";
 import { useDispatch } from "react-redux";
 
-const ListPharmacies = ({
-  medicines,
-  shopList,
-  step,
-}) => {
+const ListPharmacies = ({ medicines, shopList, step }) => {
   const dispatch = useDispatch();
 
   const handleShopAction = (item) => {
@@ -16,7 +12,8 @@ const ListPharmacies = ({
     if (isItemInShop) {
       dispatch(removeShopItem({ id: item.id }));
     } else {
-      dispatch(addShopItem({ item: item }));
+      const newItem = { ...item, quantity: 1 };
+      dispatch(addShopItem({ item: newItem }));
     }
   };
 
@@ -50,6 +47,7 @@ const ListPharmacies = ({
               name={item.name}
               image={item.image}
               price={item.price}
+              data={item}
               onClick={() => handleShopAction(item)}
               buttonText={
                 shopList.some((shopItem) => shopItem.id === item.id)

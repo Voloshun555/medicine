@@ -13,6 +13,7 @@ import { medicineReducer } from "./medicine/medecineSlice";
 import { filterReducer } from "./filter/filterSlice";
 import { shopReducer } from "./shop/shopSlice";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { basketReducer } from "./basket/basketSlice";
 
 const persistConfig = {
     key: "root",
@@ -21,9 +22,10 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    medicine: medicineReducer,
-    filter: filterReducer,
-    shop: shopReducer
+  medicine: medicineReducer,
+  filter: filterReducer,
+  shop: shopReducer,
+  basket: basketReducer
 });
 
 const persistUsersReducer = persistReducer(persistConfig, rootReducer);
