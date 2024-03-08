@@ -31,20 +31,3 @@ const shopSlice = createSlice({
 export const { addShopItem, removeShopItem, removeAllShopItem, countShoppingCart } =
   shopSlice.actions;
 export const shopReducer = shopSlice.reducer;
-
-//  extraReducers: (builder) => {
-//     builder
-//       .addCase(postOrderThunk.pending, (state) => {
-//         state.isLoading = true;
-//         state.error = null;
-//       })
-//       .addCase(postOrderThunk.fulfilled, (state, { payload }) => {
-//         state.isLoading = false;
-//         state.order = [...state.order, payload];
-//         state.error = null;
-//       })
-//       .addCase(postOrderThunk.rejected, (state, { payload }) => {
-//         state.isLoading = false;
-//         state.error = payload;
-//       });
-//   },

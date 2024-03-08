@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Forma } from "../components/forma/forma";
 import ListPharmacies from "../components/list-pharmacies/listPharmacies";
-import { addToBasket } from "../redux/basket/basketSlice";
 import { removeAllShopItem } from "../redux/shop/shopSlice";
 import s from "./pageStyle.module.scss";
+import { createNewShopItem } from "../redux/basket/basketOperation";
 
 const initialState = {
   name: "",
@@ -33,11 +33,8 @@ const ShopingCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newItem = {
-      user: formData,
-      shop,
-    };
-    dispatch(addToBasket({ item: newItem }));
+    
+    dispatch(createNewShopItem({ user: formData, product: shop }));
     dispatch(removeAllShopItem());
     setFormData(initialState);
   };
