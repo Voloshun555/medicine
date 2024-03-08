@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/medicine/static/css/main.2ee9fd4c.css",
+    "main.js": "/medicine/static/js/main.b86059f4.js",
+    "static/css/160.511b7fa1.chunk.css": "/medicine/static/css/160.511b7fa1.chunk.css",
+    "static/js/160.971725aa.chunk.js": "/medicine/static/js/160.971725aa.chunk.js",
+    "static/media/medicine-loga.svg": "/medicine/static/media/medicine-loga.96ea012a1cd55532dd633bc93e9cdfb4.svg",
+    "index.html": "/medicine/index.html",
+    "main.2ee9fd4c.css.map": "/medicine/static/css/main.2ee9fd4c.css.map",
+    "main.b86059f4.js.map": "/medicine/static/js/main.b86059f4.js.map",
+    "160.511b7fa1.chunk.css.map": "/medicine/static/css/160.511b7fa1.chunk.css.map",
+    "160.971725aa.chunk.js.map": "/medicine/static/js/160.971725aa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ee9fd4c.css",
+    "static/js/main.b86059f4.js"
+  ]
+}
