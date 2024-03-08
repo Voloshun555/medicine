@@ -1,0 +1,33 @@
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    .wrapShop{
+        display: flex;
+        gap: 15px;
+    }
+
+    .submit{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 50px;
+        gap: 60px;
+    }
+
+    .buttonSubmit{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+    background: green;
+    color: white;
+    }
+}
