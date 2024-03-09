@@ -1,8 +1,7 @@
 import React from "react";
-import { Pharmacies } from "../components/pharmacies/pharmacies";
-import ListPharmacies from "../components/list-pharmacies/listPharmacies";
 import s from "./pageStyle.module.scss";
 import { useSelector } from "react-redux";
+import { FilterSection } from "../components/filter/filterSection";
 
 export const Home = () => {
   const filter = useSelector((state) => state.filter.items);
@@ -12,10 +11,7 @@ export const Home = () => {
 
   return (
     <section className={s.container}>
-      <div className={s.wrapShop}>
-        <Pharmacies />
-        <ListPharmacies medicines={medicine} shopList={shop} step={false}/>
-      </div>
+      <FilterSection data={medicine} shopList={shop} shop={shop} />
     </section>
   );
 };

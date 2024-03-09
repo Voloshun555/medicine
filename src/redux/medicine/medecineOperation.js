@@ -1,9 +1,8 @@
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-// const url = "http://localhost:3100";
-const url2 = "https://beckendmedicine.onrender.com";
-axios.defaults.baseURL = url2;
+const url = "https://beckendmedicine.onrender.com";
+axios.defaults.baseURL = url;
 
 export const getAllMedicines = createAsyncThunk(
     "medicine/getAllMedicines",

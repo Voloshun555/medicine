@@ -19,7 +19,7 @@
     flex-direction: column;
     gap: 8px;
   }
-  
+
   button {
     display: flex;
     justify-content: center;
@@ -39,6 +39,11 @@
     line-height: 1.5;
     background: green;
     color: white;
+    transition: background-color 0.5s;
+  }
+  button:hover {
+    background: rgb(2, 107, 2);
+    color: rgb(237, 241, 249);
   }
 
   .totalPrice {

@@ -2,9 +2,21 @@ import React from "react";
 import { CardFarmicy } from "../card-farmicy/cardFarmici";
 import s from "./listPharmacies.module.scss";
 import { addShopItem, removeShopItem } from "../../redux/shop/shopSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const ListPharmacies = ({ medicines, shopList, step }) => {
+  const filters = useSelector((state) => state.filter);
+
+  const filteredCars = medicines.filter((item) => {
+    if (filters.selectedModel && item.name !== filters.selectedModel) {
+      return false;
+    }
+    if (filters.selectedPrice && item.price !== filters.selectedPrice) {
+      return false;
+    }
+
+    return true;
+  });
   const dispatch = useDispatch();
 
   const handleShopAction = (item) => {
@@ -17,12 +29,12 @@ const ListPharmacies = ({ medicines, shopList, step }) => {
     }
   };
 
-  const hasValidMedicines = (medicines) => {
-    if (!medicines || medicines.length === 0) {
+  const hasValidMedicines = (filteredCars) => {
+    if (!filteredCars || filteredCars.length === 0) {
       return false;
     }
 
-    for (const medicine of medicines) {
+    for (const medicine of filteredCars) {
       if (
         medicine &&
         medicine.id &&
@@ -38,9 +50,9 @@ const ListPharmacies = ({ medicines, shopList, step }) => {
 
   return (
     <div className={s.container}>
-      {hasValidMedicines(medicines) ? (
+      {hasValidMedicines(filteredCars) ? (
         <ul className={s.containerCard}>
-          {medicines.map((item) => (
+          {filteredCars.map((item) => (
             <CardFarmicy
               key={item.id}
               step={step}

@@ -4,7 +4,7 @@ import { Notify } from "notiflix";
 
 const options = {
   width: "450px",
-  position: "center-center",
+  position: "top",
   timeout: 3000,
   fontSize: "25px",
 };
