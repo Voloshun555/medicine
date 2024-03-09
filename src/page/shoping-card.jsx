@@ -31,13 +31,22 @@ const ShopingCard = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    dispatch(createNewShopItem({ user: formData, product: shop }));
-    dispatch(removeAllShopItem());
-    setFormData(initialState);
-  };
+   const handleSubmit = (e) => {
+     e.preventDefault();
+     if (
+       !formData.name ||
+       !formData.email ||
+       !formData.phone ||
+       !formData.address ||
+       !shop.length
+     ) {
+       alert("All fields are required.");
+       return;
+     }
+     dispatch(createNewShopItem({ user: formData, product: shop }));
+     dispatch(removeAllShopItem());
+     setFormData(initialState);
+   };
 
   return (
     <div className={s.container}>
